@@ -20,14 +20,16 @@ def angle(a,b,c):
 if __name__ == "__main__":
     # execute only if run as a script
     hello()
-    try:
-        (x,y,z) = read_abc()
-        print(x,y,z)
-        (fr,fg)=angle(x,y,z)
-        (gr,gg)=angle(y,z,x)
-        (hr,hg)=angle(z,x,y)
-        print("Кут %s в радіанах = %f , в градусах = %f " % ("F", fr, fg))
-        print("Кут %s в радіанах = %f , в градусах = %f " % ("G", gr, gg))
-        print("Кут %s в радіанах = %f , в градусах = %f " % ("H", hr, hg))
-    except :
-        print("wrong")
+    while True:
+        try:
+            (x,y,z) = read_abc()
+            print(x,y,z)
+            (fr,fg)=angle(x,y,z)
+            (gr,gg)=angle(y,z,x)
+            (hr,hg)=angle(z,x,y)
+            print("Кут %s в радіанах = %f , в градусах = %f " % ("F", fr, fg))
+            print("Кут %s в радіанах = %f , в градусах = %f " % ("G", gr, gg))
+            print("Кут %s в радіанах = %f , в градусах = %f " % ("H", hr, hg))
+            break
+        except :
+            print("wrong")
