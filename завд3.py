@@ -19,7 +19,17 @@ def calculate_y():
             y=x*math.sin(x)
     return y
 
-def result(x,y):
-    print ("При значенні х = %f y = %f"%(x,y))
+if __name__ == "__main__":
+    # execute only if run as a script
+    hello()
+    while True:
+        try:
+            read_x()
+            calculate_y()
+            (x,y)=calculate_y()
+            print ("При значенні х = %f y = %f." % (x,y))
+            break
+        except : print ('Введено не число!')
+
 
 
