@@ -4,10 +4,10 @@ def hello():
     print('Чумак С.І., група КМ-12')
 
 def read_x():
-    x=float(input('Введіть значення х'))
+    x=float(input('Введіть значення х='))
     return x
 
-def calculate_y():
+def calculate_y(x):
     if x<-1.5 :
         y=math.pi*math.sin(x)
     else :
