@@ -5,12 +5,13 @@ def hello():
 
 def read_abc():
     print ('Введіть сторони a,b,c трикутника')
-    a=float(input())
-    b=float(input())
-    c=float(input())
+    a=float(input('a='))
+    b=float(input('b='))
+    c=float(input('c='))
     if a+b>c and b+c>a and a+c>b and a>0 and b>0 and c>0:
         return (a,b,c)
-    raise 
+    raise Exception('Неправильні вхідні дані.')
+
 def angle(a,b,c):
     r=math.acos((a*a+b*b-c*c)/(2*a*b))
     g=r/math.pi*180
@@ -22,14 +23,14 @@ if __name__ == "__main__":
     hello()
     while True:
         try:
-            (x,y,z) = read_abc()
-            print(x,y,z)
-            (fr,fg)=angle(x,y,z)
-            (gr,gg)=angle(y,z,x)
-            (hr,hg)=angle(z,x,y)
+            (x, y, z) = read_abc()
+            print(x, y, z)
+            (fr, fg) =angle(x, y, z)
+            (gr, gg) =angle(y, z, x)
+            (hr, hg) =angle(z, x, y)
             print("Кут %s в радіанах = %f , в градусах = %f " % ("F", fr, fg))
             print("Кут %s в радіанах = %f , в градусах = %f " % ("G", gr, gg))
             print("Кут %s в радіанах = %f , в градусах = %f " % ("H", hr, hg))
             break
-        except :
-            print("wrong")
+        except Exception as e:
+            print(e)
